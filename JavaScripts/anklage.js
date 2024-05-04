@@ -170,7 +170,7 @@ function createImg(path,height,width) {
                    arrChoosed[2] = sides;
                    arrChoosed[3] = txArea[0].value;
 
-                   httpPost('https://mongodbconnector.onrender.com/Anklage',arrChoosed);
+                   httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
                    //httpPost('http://localhost:3030/Anklage',arrChoosed);
 
                 }
@@ -290,7 +290,7 @@ function createButton(path,w,h) {
              for(var i=0;i<textEditor.length -1;i++)
                  arrChoosed[i+2] = textEditor[i].value;
 
-             httpPost('https://mongodbconnector.onrender.com/Anklage',arrChoosed);
+             httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
              //httpPost('http://localhost:3030/Anklage',arrChoosed);
 
              //getFingerPrint(selectedLenguage);
@@ -364,7 +364,7 @@ function requestSide(selected) {
    arrChoosed[0] = caller;
    arrChoosed[1] = selected;
 
-   httpPost('https://mongodbconnector.onrender.com/Anklage',arrChoosed);
+   httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
    //httpPost('http://localhost:3030/Anklage',arrChoosed);
 }
 
