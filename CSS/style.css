@@ -1,0 +1,120 @@
+html, body {
+     max-width: 100%;
+     overflow-x: hidden;
+}
+
+#div1{
+    margin:10px;
+    font-size:1.0em;
+}
+
+table {
+    border-collapse:collapse;
+    border:0px solid #7f7f7f;
+    width:160px;height:160px;
+}
+
+td {
+    border:0px solid #7f7f7f;
+    width:160px;height:20px;
+    text-align:left;
+    padding: 5px;
+    font-size:14px;
+    font-color:blue;
+}
+
+#div2 {
+    margin:10px;
+    font-size:1em;
+}
+
+table1 {
+    border-collapse:collapse;
+    border:0px solid #7f7f7f;
+    width:320px;height:500px;
+}
+
+td1 {
+    border:0px solid #7f7f7f;
+    margin:10px;
+    width:160px;height:140px;
+    text-align:center;
+}
+
+td2 {
+    border:0px solid #7f7f7f;
+    margin12px;
+    width:120px;height:60px;
+    font-size:12px;
+    text-align:center;
+}
+
+td3 {
+    border:0px solid #7f7f7f;
+    width:60px;height:60px;
+   
+    text-align:center;
+}
+
+td4 {
+    border:0px solid #7f7f7f;
+    width:120px;height:80px;
+    margin:20px;
+}
+
+#listTxStyle {
+  border: 1px solid #7f7f7f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #faf9f9;
+  padding: 5px;
+  border-radius: 1px;
+  width: 160px;
+  height: 15px;
+  font-size: 12px;
+}
+#counterStyle {
+  border: 1px solid #7f7f7f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #faf9f9;
+  padding: 5px;
+  border-radius: 1px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+#custominput {
+  border: 1px solid #7f7f7f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  scroll: true;
+  background: #f8fbfd;
+  margin: 10px 0;
+  border-radius: 1px;
+  width: 320px;
+  height: 465px;
+  font-size: 12px;
+}
+#custominput1 {
+  border: 1px solid #7f7f7f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  scroll: true;
+  background: #f8fbfd;
+  margin: 10px;
+  border-radius: 1px;
+  width: 320px;
+  height: 290px;
+  font-size: 14px;
+}
+
+
