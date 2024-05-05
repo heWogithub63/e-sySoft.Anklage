@@ -90,14 +90,21 @@ function anklage() {
 async function runCounter(mitstreiter) {
     var n = 1;
     var n0 = '0000';
+    var n1 = 1;
+
     while ( n <= mitstreiter) {
-       var Sn = n0.substring(0,(4 -(""+n).length)) + n;
-      
+       
+       var Sn = n0.substring(0,(4 -(""+n1).length)) + n1;
+       
        aImg.setAttribute('src', "./Animation/animCounter/"+Sn+".png");
        textEditor[textEditor.length -1].value = n;
        await sleep(150);
        
       n++;
+      n1++;
+      
+      if(!(""+parseFloat(n/50)).includes('.')) n1 = 1;
+      
     }
     saveBtn.src = './Pictures/signBtn_closed.png';
 }
@@ -384,7 +391,7 @@ async function httpPost(url, data) {
 	                    } else {throw new Error();}
 	    })
 	    .then(data=> {result = data.body;
-	                   console.log(data)
+	                   //console.log(data)
 	                  }	)
 
 	    .catch(err=>console.log('fetch() failed'));
