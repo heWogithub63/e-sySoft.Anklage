@@ -424,8 +424,8 @@ async function httpPost(url, data) {
                        list[2] = list[2].replace('\\','°').replace('°n','\n').replace('\"','');
 
                    txArea[0].value = list[2];
-
-                   runCounter(list[1].replace('"',''));
+                   if(selectedSide == 1)
+                      runCounter(list[1].replace('"',''));
              }
 
         }
