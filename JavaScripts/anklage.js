@@ -158,24 +158,32 @@ function createImg(path,height,width) {
              }
              else if(event.target.src.includes('writing')) {
                 if(txArea[0].value !== '') {
+                   caller = 'Deploy_Seite';
+
                    if(newDoc) {
                       while(row6.lastChild)
                             row6.removeChild(row6.lastChild);
 
                       sides = parseInt(sides) +1;
-                      console.log(""+sides);
+
                       for(var i=0;i<sides;i++) {
                           var checked = false;
                           if(i == 0) checked = true;
                           row6.appendChild(createRadioElement('radio_'+(i+1), 'radioBtn', sides));
                       }
+
+                      arrChoosed[0] = caller;
+                      arrChoosed[1] = getActualDate();
+                      arrChoosed[2] = sides;
+                      arrChoosed[3] = txArea[0].value;
+
                       newDoc = false;
+                   } else {
+                      arrChoosed[0] = caller;
+                      arrChoosed[1] = getActualDate();
+                      arrChoosed[2] = selectedSide;
+                      arrChoosed[3] = txArea[0].value;
                    }
-                   caller = 'Deploy_Seite';
-                   arrChoosed[0] = caller;
-                   arrChoosed[1] = getActualDate();
-                   arrChoosed[2] = sides;
-                   arrChoosed[3] = txArea[0].value;
 
                    httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
                    //httpPost('http://localhost:3030/Anklage',arrChoosed);
