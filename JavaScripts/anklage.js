@@ -21,6 +21,7 @@
    var aImg = document.createElement("img");
    var bImg = document.createElement("img");
    var tImg = document.createElement("img");
+   var timerImg = document.createElement("img");
    var qrImg = document.createElement("img");
    var textEditor = new Array();
    var caller;
@@ -55,6 +56,7 @@ function anklage() {
    }
    row0.appendChild(cell1);
    row0.appendChild(createImg('./Pictures/anklage_reading.png', 40, 40));
+   row0.appendChild(createImg('./Animation/timer_black.gif',40,40));
    row1.appendChild(createTxArea(0,'read','custominput',true,5000,40,120));
    row1.appendChild(createImg('./Pictures/newDoc.png', 20, 20));
 
@@ -207,6 +209,14 @@ function createImg(path,height,width) {
        tImg.setAttribute('width', width);
        cell.appendChild(tImg);
     }
+    if(path.includes('empty')) {
+       var cell = document.createElement("td2");
+       timerImg.setAttribute('src', path);
+       timerImg.setAttribute('name', 'oImg');
+       timerImg.setAttribute('height', height);
+       timerImg.setAttribute('width', width);
+       cell.appendChild(timerImg);
+    }
     if(path.includes('QR_Code')) {
        var cell = document.createElement("td3");
        var qrImg = document.createElement("img");
@@ -335,6 +345,7 @@ function createRadioElement(value, name, checked) {
         
         radiobut.addEventListener('click', (event) => {
             selectedSide = event.target.value.substring(event.target.value.lastIndexOf('_') +1);
+            timerImg.src = ./Animation/timer_black.gif;
             requestSide(selectedSide);
         })
     cell.appendChild(radiobut);
@@ -432,8 +443,10 @@ async function httpPost(url, data) {
                        list[2] = list[2].replace('\\','°').replace('°n','\n').replace('\"','');
 
                    txArea[0].value = list[2];
-                   if(selectedSide == 1)
+                   timerImg.src = ./Animation/empty.png;
+                   if(selectedSide == 1) {
                       runCounter(list[1].replace('"',''));
+                   }
              }
 
         }
