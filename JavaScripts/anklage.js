@@ -209,7 +209,7 @@ function createImg(path,height,width) {
        tImg.setAttribute('width', width);
        cell.appendChild(tImg);
     }
-    if(path.includes('empty')) {
+    if(path.includes('timer')) {
        var cell = document.createElement("td2");
        timerImg.setAttribute('src', path);
        timerImg.setAttribute('name', 'oImg');
@@ -345,7 +345,7 @@ function createRadioElement(value, name, checked) {
         
         radiobut.addEventListener('click', (event) => {
             selectedSide = event.target.value.substring(event.target.value.lastIndexOf('_') +1);
-            timerImg.src = ./Animation/timer_black.gif;
+            timerImg.src = './Animation/timer_black.gif';
             requestSide(selectedSide);
         })
     cell.appendChild(radiobut);
@@ -443,7 +443,7 @@ async function httpPost(url, data) {
                        list[2] = list[2].replace('\\','°').replace('°n','\n').replace('\"','');
 
                    txArea[0].value = list[2];
-                   timerImg.src = ./Animation/empty.png;
+                   timerImg.src = './Animation/empty.png';
                    if(selectedSide == 1) {
                       runCounter(list[1].replace('"',''));
                    }
