@@ -136,6 +136,8 @@ function createImg(path,height,width) {
            bImg.addEventListener('click', (event) => {
               txArea[0].value = '';
               newDoc = true;
+              bImg.style.visibility = 'hidden';
+              txArea[0].focus();
            });
            cell.appendChild(bImg);
     }
