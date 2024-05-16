@@ -163,6 +163,7 @@ function createImg(path,height,width) {
              else if(event.target.src.includes('writing')) {
                 if(txArea[0].value !== '') {
                    caller = 'Deploy_Seite';
+                   arrChoosed = [];
 
                    if(newDoc) {
                       while(row6.lastChild)
@@ -175,7 +176,7 @@ function createImg(path,height,width) {
                           if(i == 0) checked = true;
                           row6.appendChild(createRadioElement('radio_'+(i+1), 'radioBtn', sides));
                       }
-
+                     
                       arrChoosed[0] = caller;
                       arrChoosed[1] = getActualDate();
                       arrChoosed[2] = sides;
@@ -183,6 +184,7 @@ function createImg(path,height,width) {
 
                       newDoc = false;
                    } else {
+
                       arrChoosed[0] = caller;
                       arrChoosed[1] = getActualDate();
                       arrChoosed[2] = selectedSide;
@@ -312,13 +314,18 @@ function createButton(path,w,h) {
              event.target.src = event.target.src.replace('closed','open');
              saveBtn.src = './Pictures/signBtn_open.png';
              caller = 'Deploy_Mitklaeger';
+             arrChoosed = [];
              arrChoosed[0] = caller;
              arrChoosed[1] = getActualDate();
              for(var i=0;i<textEditor.length -1;i++)
                  arrChoosed[i+2] = textEditor[i].value;
 
-             httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
-             //httpPost('http://localhost:3030/Anklage',arrChoosed);
+             if(!arrChoosed[3].includes('Mustermann') && !arrChoosed[4].includes('Sowieso')) {
+                httpPost('https://connectmdb.onrender.com/Anklage',arrChoosed);
+                //httpPost('http://localhost:3030/Anklage',arrChoosed);
+             } else {
+                saveBtn.src = './Pictures/signBtn_closed.png';
+             }
 
              //getFingerPrint(selectedLenguage);
         } else {
